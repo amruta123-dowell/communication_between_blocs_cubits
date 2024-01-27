@@ -12,14 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ColorCubit(),
-      child: BlocProvider(
-        create: (context) =>
-            CounterCubit(colorCubit: context.read<ColorCubit>()),
-        child: MaterialApp(
-          home: ChangeColorSCreen(),
-        ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ColorCubit>(create: (context) => ColorCubit()),
+        BlocProvider<CounterCubit>(
+            create: (context) =>
+                CounterCubit(colorCubit: context.read<ColorCubit>()))
+      ],
+      child: const MaterialApp(
+        home: ChangeColorSCreen(),
       ),
     );
   }
