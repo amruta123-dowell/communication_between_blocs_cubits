@@ -1,3 +1,4 @@
+import 'package:communication_between_blocs_cubits/app_observer.dart';
 import 'package:communication_between_blocs_cubits/bloc/colorBloc/color_bloc.dart'
     as colorBloc;
 import 'package:communication_between_blocs_cubits/bloc/counterBloc/counter_bloc.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  Bloc.observer = AppObserver();
   runApp(const MyApp());
 }
 
