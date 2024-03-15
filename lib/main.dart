@@ -23,10 +23,12 @@ class MyApp extends StatelessWidget {
         BlocProvider<ColorCubit>(create: (context) => ColorCubit()),
         BlocProvider<CounterCubit>(
           create: (context) => CounterCubit(),
-
-          ///Using StreamSubscription
-          // create: (context) =>
-          //     CounterCubit(colorCubit: context.read<ColorCubit>())
+    
+         ///Using StreamSubscription
+          ///child: BlcProvider(
+          ///create: // create: (context) =>
+          //     CounterCubit(colorCubit: context.read<ColorCubit>() ),
+        
         ),
         BlocProvider<colorBloc.ColorBloc>(
             create: (context) => colorBloc.ColorBloc()),
